@@ -46,7 +46,7 @@ public class BoardView : Control
 
     }
 
-    //уровень ИИ (меньше значение - меньше сложность)
+    //difficulty level AI
     public int depth
     {
         get
@@ -58,18 +58,18 @@ public class BoardView : Control
             computer.depth = value;
         }
     }
-    //логическая переменная для ИИ
-    bool II;
+    //Boolean var for AI
+    bool AI;
 
-    //Инициализация новой игры с ИИ
-    public void newGameII()
+    //Initializing new game wift AI
+    public void newGameAI()
     {
-        //очистка поля
+        //Clear checkers board
         board.clearBoard();
         selected.clear();
         Invalidate();
         reset();
-        II = true;
+        AI = true;
         ChangeTitle();
     }
 
@@ -77,7 +77,7 @@ public class BoardView : Control
     public void newGame()
     {
         //очистка поля
-        II = false;
+        AI = false;
         board.clearBoard();
         selected.clear();
         Invalidate();
@@ -319,7 +319,7 @@ public class BoardView : Control
                             {
                                 selected.push_back(pos);
                                 //если играем с ИИ
-                                if (II)
+                                if (AI)
                                     //ход делает ИИ
                                     makeMovesII(selected, board);
                                 else

@@ -39,6 +39,9 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lowLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mediumLevelAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hardLevelAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +52,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(494, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(491, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,15 +70,21 @@
             // 
             // newGameWithAIToolStripMenuItem
             // 
+            this.newGameWithAIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lowLevelToolStripMenuItem,
+            this.mediumLevelAIToolStripMenuItem,
+            this.hardLevelAIToolStripMenuItem});
             this.newGameWithAIToolStripMenuItem.Name = "newGameWithAIToolStripMenuItem";
             this.newGameWithAIToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.newGameWithAIToolStripMenuItem.Text = "New game with AI";
+            this.newGameWithAIToolStripMenuItem.Click += new System.EventHandler(this.newGameWithAIToolStripMenuItem_Click);
             // 
             // newGameWithHumanToolStripMenuItem
             // 
             this.newGameWithHumanToolStripMenuItem.Name = "newGameWithHumanToolStripMenuItem";
             this.newGameWithHumanToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.newGameWithHumanToolStripMenuItem.Text = "New game with human";
+            this.newGameWithHumanToolStripMenuItem.Click += new System.EventHandler(this.newGameWithHumanToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
@@ -121,16 +130,38 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // lowLevelToolStripMenuItem
+            // 
+            this.lowLevelToolStripMenuItem.Name = "lowLevelToolStripMenuItem";
+            this.lowLevelToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.lowLevelToolStripMenuItem.Text = "Low level AI";
+            this.lowLevelToolStripMenuItem.Click += new System.EventHandler(this.lowLevelToolStripMenuItem_Click);
+            // 
+            // mediumLevelAIToolStripMenuItem
+            // 
+            this.mediumLevelAIToolStripMenuItem.Name = "mediumLevelAIToolStripMenuItem";
+            this.mediumLevelAIToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.mediumLevelAIToolStripMenuItem.Text = "Medium level AI";
+            this.mediumLevelAIToolStripMenuItem.Click += new System.EventHandler(this.mediumLevelAIToolStripMenuItem_Click);
+            // 
+            // hardLevelAIToolStripMenuItem
+            // 
+            this.hardLevelAIToolStripMenuItem.Name = "hardLevelAIToolStripMenuItem";
+            this.hardLevelAIToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.hardLevelAIToolStripMenuItem.Text = "Hard level AI";
+            this.hardLevelAIToolStripMenuItem.Click += new System.EventHandler(this.hardLevelAIToolStripMenuItem_Click);
+            // 
             // Checkers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 438);
+            this.ClientSize = new System.Drawing.Size(491, 397);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Checkers";
             this.Text = "Checkers game";
+            this.Load += new System.EventHandler(this.Checkers_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -150,6 +181,9 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rulesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lowLevelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mediumLevelAIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hardLevelAIToolStripMenuItem;
     }
 }
 

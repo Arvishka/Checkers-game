@@ -46,11 +46,11 @@ namespace Game
 
             if (SaveDialog.ShowDialog() == DialogResult.OK)
             {
-                FileStream fs1 = new FileStream(SaveDialog.FileName, FileMode.Create);
-                StreamWriter myStream = new StreamWriter(fs1);
+                FileStream FileVarStream = new FileStream(SaveDialog.FileName, FileMode.Create);
+                StreamWriter myStream = new StreamWriter(FileVarStream);
                 if ((myStream != null))
                 {
-                    m_view.saveBoard(fs1);
+                    m_view.saveBoard(FileVarStream);
                     myStream.Close();
                 }
             }
@@ -66,13 +66,61 @@ namespace Game
 
             if (OpenDialog.ShowDialog() == DialogResult.OK)
             {
-                FileStream kl = new FileStream(OpenDialog.FileName, FileMode.Open);
-                if ((kl != null))
+                FileStream FileVar = new FileStream(OpenDialog.FileName, FileMode.Open);
+                if ((FileVar != null))
                 {
-                    m_view.loadBoard(kl);
-                    kl.Close();
+                    m_view.loadBoard(FileVar);
+                    FileVar.Close();
                 }
             }
         }
+        //new game with human
+        private void newGameWithHumanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int level = m_view.depth;
+            m_view.newGame();
+            m_view.depth = level;
+        }
+        //New game wing AI
+        private void newGameWithAIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Nothing. Don't touch this!
+        }
+
+        private void Checkers_Load(object sender, EventArgs e)
+        {
+            //Nothing. Don't touch this!
+        }
+
+        private void lowLevelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int level = m_view.depth;
+            m_view.newGameAI();
+            m_view.depth = 1;
+        }
+
+        private void mediumLevelAIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int level = m_view.depth;
+            m_view.newGameAI();
+            m_view.depth = 3;
+        }
+
+        private void hardLevelAIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int level = m_view.depth;
+            m_view.newGameAI();
+            m_view.depth = 5;
+        }
     }
+    //protected override void OnSizeChanged(EventArgs e)
+    //{
+    //    base.OnSizeChanged(e);
+    //    if (m_view != null)
+    //    {
+    //        m_view.Size = ClientSize;
+    //        m_view.Invalidate();
+    //    }
+    //}
+
 }
