@@ -1,0 +1,19 @@
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+
+//namespace Game
+//{
+//    class BadMoveException
+//    {
+//    }
+//}
+using System;
+
+//»сключение, если игрок пытаетс¤ перейти на неверную клетку
+internal class BadMoveException : Exception
+{
+}
+
